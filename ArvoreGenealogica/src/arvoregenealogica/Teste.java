@@ -1,34 +1,29 @@
+
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Autor do código:
+ *      Ronaldo Mendonça Zica
+ *      E-mail: rzica42@gmail.com
+ *      Github: ronaldozica
  */
 
 package arvoregenealogica;
 import java.util.Scanner;
 
-/**
- *
- * @author rzica
- */
 public class Teste {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
-        Pessoa[] pessoa = new Pessoa [10];
-        Pessoa[] mae = new Pessoa [10];
-        Pessoa[] pai = new Pessoa [10];
+        Pessoa[] pessoa = new Pessoa [10];                                              // Cria o vetor de pessoas, que receberá 10 pessoas que
+        Pessoa[] mae = new Pessoa [10];                                                 // possuírão nome, pai e mãe, para isso será usado o vetor
+        Pessoa[] pai = new Pessoa [10];                                                 // de pai e vetor de mãe declarado nas linhas 18 e 19
         
         String nome = " ";
         String nomeMae = " ";
         String nomePai = " ";
         
-        for(int i = 1; i < 11; i ++)
-        {
+        for(int i = 1; i < 11; i ++)                                                    // Começou em i = 1 para que pudesse exibir no println a mensagem
+        {                                                                               // "iª pessoa" sem necessitar somar   
                 System.out.println("Digite o nome da " + i + "ª pessoa:");
                 nome = scanner.next();
                 
@@ -38,8 +33,8 @@ public class Teste {
                 System.out.println("Digite o nome do pai da " + i + "ª pessoa:");
                 nomePai = scanner.next();
                 
-                mae[i - 1] = new Pessoa(nomeMae);
-                pai[i - 1] = new Pessoa(nomePai);
+                mae[i - 1] = new Pessoa(nomeMae);                                       // Foi utilizado posição i-1 pra corrigir o deslocamento de +1 
+                pai[i - 1] = new Pessoa(nomePai);                                       // inicial no i
                 
                 pessoa[i - 1] = new Pessoa(nome, mae[i - 1], pai[i - 1]);
         }
