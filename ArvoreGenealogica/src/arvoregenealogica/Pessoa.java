@@ -29,17 +29,17 @@ public class Pessoa {
     }
     
     public boolean ehIrma(Pessoa pessoa){
-        return (this.getMae().equals(pessoa.getMae())) || (this.getPai().equals(pessoa.getPai()));
+        return ( (this.getMae().getNome().equals(pessoa.getMae().getNome())) || (this.getPai().getNome().equals(pessoa.getPai().getNome())) );
     }
     
     public boolean ehAntecessor(Pessoa pessoa){
         
-        if (this.getPai().getNome().equals(pessoa.getNome()) || (this.getNome().equals(pessoa.getPai().getNome())))
+        if (this.getNome().equals(pessoa.getPai().getNome()))
         {
             return true;
         }
         
-        return this.getMae().getNome().equals(pessoa.getNome()) || (this.getNome().equals(pessoa.getMae().getNome()));
+        return ( this.getNome().equals(pessoa.getMae().getNome()) );
     }
 
     public String getNome() {
